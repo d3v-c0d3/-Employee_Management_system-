@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Jobs List</title>
+  </head>
+  <body>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <a class="navbar-brand" href="dash.html">Home (Logo)</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Employees <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Jobs</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <div class="input-group ">
+                    <input type="text" class="form-control form-control-sm " placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-success btn-sm" type="button" id="button-addon2"><i class="fa fa-search"></i> </button>
+                    </div>
+                  </div>
+              </form>
+              <a href="#" class="ml-3 btn btn-warning br_round">Log Out</a>
+
+            </div>
+          </nav>
+        <!--navbar ends-->
+
+         <!--Sidbar -->
+         <div class="container-fluid">
+             <div class="row mt-3 ">
+                 <div class="col-lg-3 col-md-3">
+                    <div class="list-group small">
+                        <div class="list-group-item active">job Data</div>
+                        <a href="#" class="list-group-item " data-toggle="modal" data-target="#add_job">Add New job</a>
+                        <a href="jobs-list.html" class="list-group-item ">View all Jobs</a>
+                    </div>
+                 </div>
+                 <div class="collg-9 col-md-9">
+                     <table class="table table-striped table-hover table-dark">
+                         <tr class="">
+                             <td>ID</td>
+                             <td>Job Name</td>
+                             <td>Details</td>
+                             <td>Edits</td>
+                             <td>Delete</td>
+                         </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                               
+                                <td><a href="#" data-toggle="modal" data-target="#view_details" class="btn btn-info btn-block btn-sm">Details</a></td>
+                                <td><a href="#" data-toggle="modal" data-target="#edit_details" class="btn btn-warning btn-block btn-sm">Edits</a></td>
+                                <td><a href="#" data-toggle="modal" data-target="#edit_details" class="btn btn-danger btn-block btn-sm" onclick='confirm("Are You Sure? You want to delete this job " )' >Delete</a></td>
+                               
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>John Doe</td>
+                              
+                              <td><a href="#" data-toggle="modal" data-target="#add_employee"class="btn btn-info btn-block btn-sm">Details</a></td>
+                              <td><a href="#" class="btn btn-warning btn-block btn-sm">Edits</a></td>
+                              <td><a href="#" data-toggle="modal" data-target="#edit_details" class="btn btn-danger btn-block btn-sm">Delete</a></td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                          
+                            <td><a href="#" data-toggle="modal" data-target="#add_employee"class="btn btn-info btn-block btn-sm">Details</a></td>
+                            <td><a href="#" class="btn btn-warning btn-block btn-sm">Edits</a></td>
+                            <td><a href="#" data-toggle="modal" data-target="#edit_details" class="btn btn-danger btn-block btn-sm">Delete</a></td>
+                        </tr> 
+                        <tr>
+                          <td>1</td>
+                          <td>John Doe</td>
+                         
+                          <td><a href="#" data-toggle="modal" data-target="#add_employee"class="btn btn-info btn-block btn-sm">Details</a></td>
+                          <td><a href="#" class="btn btn-warning btn-block btn-sm">Edits</a></td>
+                          <td><a href="#" data-toggle="modal" data-target="#edit_details" class="btn btn-danger btn-block btn-sm">Delete</a></td>
+                      </tr>
+                     </table>
+                 </div>
+             </div>
+         </div>
+         <!--Sidbar -->
+
+            <!--Add job Modal -->
+            <div class="modal fade" id="add_job" tabindex="-1" aria-labelledby="add_job" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Job Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="">
+                      <div class="mb-3">
+                        <input type="date" class="form-control form-control-sm" placeholder="">
+                      </div>
+                      <div class="mb-3">
+                        <input type="text" class="form-control form-control-sm" placeholder="Job Name">
+                      </div>
+                      <div class="mb-3">
+                        <button type="submit" class="btn btn-success btn-block br_round">Add New Job</button>  
+                      </div>
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!--Details Modal-->
+            <div class="modal fade" id="view_details" tabindex="-1" aria-labelledby="view_details" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampl">Employee Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                      <table class="table table-bordered">
+                        <tr>
+                          <th>Id</th>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <th>Job Added Date</th>
+                          <td>29 july 2021</td>
+                        </tr>
+                        <tr>
+                          <th>Name</th>
+                          <td>graphic Designer</td>
+                        </tr>
+                      </table>
+                
+                </div>
+              </div>
+            </div>
+
+          <!--Edit Modal-->
+          <div class="modal fade" id="edit_details" tabindex="-1" aria-labelledby="edit_details" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Job Details</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-sm" value="12-08-2021" required>
+                    </div>
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-sm" value="Graphic Designer" required>
+                    </div>
+                    <div class="mb-3">
+                      <button type="submit" class="btn btn-success btn-block br_round ">Edit Job Detail</button>  
+                    </div>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+   
+  </body>
+</html>
